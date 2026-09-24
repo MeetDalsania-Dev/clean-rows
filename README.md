@@ -29,3 +29,16 @@ All local assets, cross-page links, anchors and IDs pass static validation. Java
 The file preview has 10 field groups. Name and business email remain first and second; personal and company LinkedIn profiles are third and fourth. Remaining fields keep their original relative order.
 
 The workflow logo strip uses original Instantly, Smartlead, lemlist, Apollo, HubSpot and LinkedIn artwork stored locally. Google Sheets has been replaced in this strip. The equal groups animate left to right, pause on hover or keyboard focus, and become a static grid for reduced-motion preferences. Provenance is in `LOGO-SOURCES.json`.
+
+## Lead attribution (UTM tracking)
+
+`dist/tracking.js` runs on both pages. On arrival it saves the visit's `utm_source`, `utm_medium`, `utm_campaign`, `utm_term`, `utm_content`, ad click IDs (`gclid`, `fbclid`, `li_fat_id`, `msclkid`), external referrer and landing page in `localStorage`. Visits with no tags are recorded as the referring site or `(direct)`, and a direct revisit never overwrites a tagged source. The first-ever source is kept separately as `first_touch`.
+
+Every call to action gets a `data-cta` label in the form `page-section-purpose`, for example `home-hero-free-leads`, `home-pricing-plan-growth` or `calculator-page-free-leads`. The last one clicked in the tab is sent with the request.
+
+Where it shows up:
+- **WhatsApp requests** (Vercel and other static hosting): a `Ref:` line at the end of the message, e.g. `Ref: linkedin / paid / sept_saas / ad_a, button: home-pricing-plan-growth`.
+- **Direct WhatsApp links** (FAQ and contact): the chat opens pre-filled with the same `Ref:` line.
+- **Netlify forms**: hidden fields `utm_*`, `click_id`, `cta`, `landing_page`, `referrer` and `first_touch` on each submission.
+
+Tag links you share like: `https://clean-rows.vercel.app/?utm_source=linkedin&utm_medium=paid&utm_campaign=sept_saas&utm_content=ad_a`.
