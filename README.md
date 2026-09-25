@@ -5,12 +5,12 @@ Static B2B prospecting website for enterprise, SaaS and agency teams. The curren
 ## Pages
 
 - `dist/index.html`: ICP-based positioning for LinkedIn research, account-based campaigns and email outreach. Includes a targeting demo, quality workflow, field explorer with personal and company LinkedIn profiles in positions 3 and 4, process and audience tabs, pricing, order examples, FAQs and sample-request form.
-- `dist/calculator.html`: standalone cost calculator, reached through the homepage footer. Uses the existing volume, seat and monthly/yearly calculations and states comparison assumptions.
+- `dist/calculator.html`: standalone cost calculator, reached through the homepage footer. Uses published package combinations below 100,000 leads and requests a custom quote at higher volumes. Competitor models are illustrative assumptions, not current quotes.
 - `dist/site-ui.js`: shared navigation and reading progress.
 - `dist/app.js` and `dist/content.js`: homepage interactions and dynamic copy.
 - `dist/calculator.js`: calculator interactions and the `set_lead_volume` WebMCP tool.
 
-The public files contain no bounce-rate messaging or em dashes. Existing business facts and pricing are user-supplied. Phone availability remains qualified. The copy does not claim that LinkedIn profile URLs can be directly uploaded as advertising audiences.
+The public files contain no bounce-rate messaging or em dashes. Pricing: Starter $25 / 1,000 leads; Growth $199 / 10,000; Scale $799 / 50,000; Enterprise 100,000+ by custom quote. All prices are USD per package. Savings badges round the reduction in per-lead cost versus Starter. Phone availability remains qualified. The copy does not claim that LinkedIn profile URLs can be directly uploaded as advertising audiences.
 
 ## Forms and hosting
 
@@ -22,9 +22,9 @@ The existing Sites review URL is private. The original Netlify site is separate.
 
 ## Validation
 
-Checked both pages at 320, 390, 768, 1024 and 1440px with no page overflow or clipped headings/controls. Tested targeting toggles, reordered field keyboard navigation, process/support and enterprise/SaaS tabs, plan-to-form selection, required-field validation, footer-to-calculator navigation, mobile menu and Escape. Calculator shows $93 at 10K monthly, $400 at 50K monthly and $4,800 at 50K yearly. Browser error log was empty. No messages or requests were sent.
+Checked both pages at 320, 390, 768, 1024 and 1440px with no page overflow or clipped headings/controls. Tested targeting toggles, reordered field keyboard navigation, process/support and enterprise/SaaS tabs, plan-to-form selection, required-field validation, footer-to-calculator navigation, mobile menu and Escape. Calculator shows $199 at 10K monthly, $799 at 50K monthly and $9,588 at 50K yearly. At 100K+ it displays Custom quote and suppresses numeric savings. Browser error log was empty. No messages or requests were sent.
 
-All local assets, cross-page links, anchors and IDs pass static validation. JavaScript syntax passes. Source is committed to the existing Sites Git remote.
+All local assets, cross-page links, anchors and IDs pass static validation. JavaScript syntax passes. Production is served from `dist/` through Vercel, connected to the GitHub main branch.
 
 The file preview has 10 field groups. Name and business email remain first and second; personal and company LinkedIn profiles are third and fourth. Remaining fields keep their original relative order.
 
