@@ -93,3 +93,21 @@ form input,form textarea,form select{scroll-margin-top:125px}
 @media(max-width:600px){html{scroll-padding-top:150px}.header{display:grid;grid-template-columns:1fr auto;padding:10px 4%;gap:10px 12px}.header>.logo{grid-column:1;grid-row:1}.header>.menu-toggle{grid-column:2;grid-row:1}.header>.header-actions{grid-column:1/-1;grid-row:2;width:100%;margin:0}.cta-pair{gap:8px}.cta-pair .button{font-size:.875rem;min-height:48px;padding:11px 8px}.section-cta>.cta-pair,.verification-bottom>.cta-pair{width:100%}#plan-options{scroll-margin-top:150px}}
 .hero-copy,.step-copy{min-width:0}
 @media(max-width:560px){.section-cta,.verification-bottom{flex-wrap:nowrap}.section-cta>p,.verification-bottom>p{flex-basis:auto}}
+/* Section rhythm: more breathing room and a clear edge between neighbouring light sections */
+.section{padding-block:128px}
+.section.paper+.section.paper,#results,#about{border-top:1px solid var(--line)}
+.section-cta{margin-top:56px;padding-top:28px}
+@media(max-width:1150px){.section{padding-block:104px}}
+@media(max-width:800px){.section{padding-block:96px}.section-heading{margin-bottom:44px}}
+@media(max-width:560px){.section{padding-block:88px}.section-cta{margin-top:44px;padding-top:26px}.metrics{padding-block:44px}}
+/* Mobile header: one slim row with logo, primary action and menu */
+@media(max-width:600px){html{scroll-padding-top:80px}.header{grid-template-columns:1fr auto auto;align-items:center;padding:10px 4%;gap:8px}.header>.logo{grid-column:1;grid-row:1;min-width:0}.header>.header-actions,.header>.nav-cta{grid-column:2;grid-row:1;width:auto;margin:0}.header>.menu-toggle{grid-column:3;grid-row:1;min-width:44px;min-height:44px}.header>.header-actions{display:flex}.header-actions .cta-secondary{display:none}.header-actions .cta-primary,.header>.nav-cta{min-height:44px;padding:10px 14px;font-size:.8125rem;white-space:nowrap}.header nav{max-height:calc(100dvh - 70px)}#plan-options{scroll-margin-top:80px}}
+@media(max-width:360px){.header .logo{font-size:1.05rem}.header-actions .cta-primary,.header>.nav-cta{padding:10px;font-size:.75rem}}
+/* Hero scene: the floating stamp covered prospect names on phones and repeats the headline */
+@media(max-width:560px){.scene-stamp{display:none}.scene-person small{max-width:none}}
+/* How it works: show all five steps without sideways scrolling */
+@media(max-width:600px){.steps-nav{grid-template-columns:1fr 1fr;overflow:visible}.steps-nav button{min-height:52px;justify-content:flex-start}.steps-nav button:last-child{grid-column:1/-1}}
+/* Touch targets of at least 44px for links on phones and tablets */
+@media(max-width:800px){.footer-links a,.footer-bottom a,.contact-links a,.text-link,.stack-more summary{display:inline-flex;align-items:center;min-height:44px}.contact-links{gap:4px}.footer-links{gap:4px 24px}.footer-bottom>div{gap:4px 20px;flex-wrap:wrap}}
+.steps-nav button[aria-selected="false"]{color:#566b5e}
+@media(max-width:800px){.header>.logo,footer>.logo,.announcement,.assumptions summary{display:inline-flex;align-items:center;min-height:44px}.calc-result-top button{min-height:44px}#volume{height:44px}#seats{min-height:44px;font-size:1rem}}
